@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: office-management
+  webflux:
+    base-path: /api/v1
+  data:
+    mongodb:
+      host: localhost
+      port: 27026
+      authentication-database: admin
+      username:
+      password:
+      database: abc-test-rakib
+      auto-index-creation: true
