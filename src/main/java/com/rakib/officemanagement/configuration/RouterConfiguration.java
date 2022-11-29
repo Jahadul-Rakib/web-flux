@@ -1,7 +1,7 @@
 package com.rakib.officemanagement.configuration;
 
-import com.rakib.officemanagement.service.service_impl.HealthCheckingService;
-import com.rakib.officemanagement.service.service_impl.UserInfoService;
+import com.rakib.officemanagement.service.HealthCheckingService;
+import com.rakib.officemanagement.service.UserInfoService;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.MediaType;

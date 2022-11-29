@@ -1,4 +1,4 @@
-package com.rakib.officemanagement.service.service_impl;
+package com.rakib.officemanagement.service;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;

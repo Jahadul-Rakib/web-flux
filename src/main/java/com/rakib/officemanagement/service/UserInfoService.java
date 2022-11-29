@@ -1,4 +1,4 @@
-package com.rakib.officemanagement.service.service_impl;
+package com.rakib.officemanagement.service;
 
 import com.rakib.officemanagement.model_repository.UserInfoRepository;
 import com.rakib.officemanagement.service.dtos.UserInfoDTO;
