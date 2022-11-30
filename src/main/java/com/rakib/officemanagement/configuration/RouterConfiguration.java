@@ -27,18 +27,11 @@ public class RouterConfiguration {
     @Bean
     RouterFunction<ServerResponse> baseRouterFunction() {
         return RouterFunctions.route ()
-                .POST ("/user",RequestPredicates.accept (MediaType.APPLICATION_JSON), userInfoService::createUserInfo)
+                .path ("/", builder -> builder
+                        .GET (RequestPredicates.accept (MediaType.APPLICATION_JSON), healthCheckingService::getHealthStatus)
+                        .GET ("/health", RequestPredicates.accept (MediaType.APPLICATION_JSON), healthCheckingService::getHealthStatus))
+                .path ("/user", builder -> builder
+                        .POST (RequestPredicates.accept (MediaType.APPLICATION_JSON), userInfoService::createUserInfo))
                 .build ();
     }
-
-//    @Bean
-//    RouterFunction<ServerResponse> baseRouterFunction() {
-//        return RouterFunctions.route ()
-//                .path ("/", builder -> builder
-//                        .GET (RequestPredicates.accept (MediaType.APPLICATION_JSON), healthCheckingService::getHealthStatus)
-//                        .GET ("/health", RequestPredicates.accept (MediaType.APPLICATION_JSON), healthCheckingService::getHealthStatus))
-//                .path ("/user", builder -> builder
-//                        .POST (RequestPredicates.accept (MediaType.APPLICATION_JSON), userInfoService::createUserInfo))
-//                .build ();
-//    }
 }
